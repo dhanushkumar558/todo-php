@@ -27,10 +27,8 @@ export default function Signup({ setUserId }) {
         setUserId(data.user_id);
         localStorage.setItem("user_id", data.user_id);
 
-        // ✅ Optional redirect after short delay
-        setTimeout(() => {
-          window.location.href = "/dashboard"; // Change this path as needed
-        }, 1500);
+    
+     
       } else {
         setError(data.message || "Signup failed");
       }
