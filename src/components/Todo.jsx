@@ -11,7 +11,7 @@ export default function Todo({ userId }) {
 
   const fetchTodos = async () => {
     try {
-      const res = await fetch(`http://boltxgaming.com/todo/get_todos.php?user_id=${userId}`);
+      const res = await fetch(`https://boltxgaming.com/todo/get_todos.php?user_id=${userId}`);
       const data = await res.json();
       setTodos(data);
     } catch (err) {
@@ -23,7 +23,7 @@ export default function Todo({ userId }) {
     if (!newTodo.trim()) return;
     setLoadingAdd(true);
     try {
-      await fetch("http://boltxgaming.com/todo/add_todo.php", {
+      await fetch("https://boltxgaming.com/todo/add_todo.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id: userId, text: newTodo }),
